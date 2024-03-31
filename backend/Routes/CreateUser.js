@@ -7,7 +7,7 @@ const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const jwtSecret = "MyNameISAskahymugale#$"
+const jwtSecret = process.env.jwtsecret
 
 // POST request handler for creating a new user
 router.post("/createuser",

@@ -22,12 +22,12 @@ let navigate = useNavigate();
       body: JSON.stringify({ email: cred.email, password: cred.password })
     });
   
-    // if (!response.ok) {
-    //   console.error('Error:', response.status);
-    //   toast.error("Failde to submit!, try Again!")
-    //   alert('Failed to submit the form. Please try again later.');
-    //   return;
-    // }
+    if (!response.ok) {
+      console.error('Error:', response.status);
+      toast.error("Failde to submit!, try Again!")
+      alert('Failed to submit the form. Please try again later.');
+      return
+    }
   
     const json = await response.json();
     console.log(json);
